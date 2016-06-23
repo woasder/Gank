@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Gank</string>
     <string name="tvend">上拉加载</string>
+    <string name="selsetSavw">重启有效</string>
 </resources>

@@ -4,15 +4,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.yyw.abc.ganhuo.ui.activity.FragmentEntity;
+
 import java.util.List;
 
 /**
  * Created by abc on 2016/5/29.
  */
 public class ListAdapter extends FragmentPagerAdapter{
-    private List<Fragment> fragments;
+    private List<FragmentEntity> fragments;
     private List<String> titles;
-    public ListAdapter(FragmentManager fm, List<Fragment> fragments ,List<String> titles) {
+    public ListAdapter(FragmentManager fm, List<FragmentEntity> fragments ,List<String> titles) {
         super(fm);
         this.fragments = fragments;
         this.titles = titles;
@@ -21,7 +23,7 @@ public class ListAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        return fragments.get(position);
+        return fragments.get(position).getFragment();
     }
 
     @Override
@@ -31,6 +33,8 @@ public class ListAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return titles.get(position);
+        return fragments.get(position).getType();
     }
+
+
 }

@@ -19,7 +19,7 @@ public class GanhuoApplication extends Application{
     public static SQLiteDatabase sqLiteDatabase;
     private static DaoSession daoSession;
     private static DaoMaster daoMaster;
-    private DaoMaster.DevOpenHelper helper;
+    private static DaoMaster.DevOpenHelper helper;
 
     @Override
     public void onCreate() {

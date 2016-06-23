@@ -15,6 +15,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.yyw.abc.ganhuo.ui.activity.BookMarkActivity;
+import com.yyw.abc.ganhuo.ui.activity.SelectActivity;
 import com.yyw.abc.ganhuo.utils.AppManager;
 import com.yyw.abc.ganhuo.utils.CropCircleTransformation;
 import com.yyw.abc.ganhuo.R;
@@ -87,6 +88,19 @@ public abstract class BaseDrawActivity extends BaseActivity{
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 AppManager.getAppManager().finishAllActivity();
+                return false;
+            }
+        });
+        menu.getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                drawerLayout.closeDrawer(Gravity.LEFT);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        SelectActivity.startSelectActivity(BaseDrawActivity.this);
+                    }
+                }, 200);
                 return false;
             }
         });
